@@ -1,11 +1,11 @@
-ejercicio obligatorio para martes 28/2
+// Ejercicio obligatorio para martes 28/2
 
 
 #include <stdio.h>
 
 #define MAXLINE 256
 
-//Funcion que eliminael '\n' del final de una cadena y devuelve su longitud
+//Funcion que elimina el '\n' del final de una cadena y devuelve su longitud
 int trimming(char cad[MAXLINE]);
 
 int main (){
@@ -24,18 +24,18 @@ int main (){
 	}
 
 	//trimming
-	if ((longitud > 0) && cad[longitud - 1] == '\n')) {
+	if ((longitud > 0) && cad[longitud - 1] == '\n') {
 		
 		cad[longitud - 1] = '\0';
 		longitud --;
 
-	printf("La longitud de %s es %d\n", cad, longitud);
+	printf("La longitud de \"%s\" es %d\n", cad, longitud);
 
 	return 0;
+	}
 }
 
-
-//Funcion que eliminael '\n' del final de una cadena y devuelve su longitud
+//Funcion que elimina el '\n' del final de una cadena y devuelve su longitud
 int trimming(char cad[MAXLINE]) {
 
 	int longitud = 0;
@@ -44,3 +44,6 @@ int trimming(char cad[MAXLINE]) {
 	while (cad[longitud] != '\0') {
 		longitud ++;
 	}
+
+	return longitud;
+}
