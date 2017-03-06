@@ -1,4 +1,3 @@
-
 /*
 * Programa que solicita un nº de enteros y reserva
 * memoria dinamica para ellos con un array
@@ -20,7 +19,7 @@ int main() {
     //solicitamos el tamaño del array
     printf("Introduce el tamaño del array: ");
     fgets(input, MAXLINE, stdin);
-    sscanf(input, "%d%", &MAX_TAM);
+    sscanf(input, "%d", &MAX_TAM);
     
     //reservamos memoria
     int *vector = (int *) malloc(MAX_TAM * sizeof(int));
