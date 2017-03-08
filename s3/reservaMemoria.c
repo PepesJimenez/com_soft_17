@@ -34,10 +34,10 @@ int main() {
         
         printf("%d", vector[MAX_TAM - 1]);
     }
-    printf("]");
+    printf("]\n");
     
     //liberamos memoria
-    free();
+    free(vector);
     
     /* HASTA AQUI LA ENTREGA OBLIGATORIA */
     

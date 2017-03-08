@@ -1,7 +1,7 @@
 
 
 
-#inlude <stdio.h>
+#include <stdio.h>
 
 
 int main () {
@@ -22,13 +22,13 @@ int main () {
     *p = 40;            // inicializa la pos. 3 del array a 40
  
     p = numbers;
-    *(p + 4) = 54;      // inicializa la pos. 4 del arrray a 54
+    *(p + 4) = 50;      // inicializa la pos. 4 del arrray a 54
     
     
     printf ("Array inicializado = [");
-    for (int i = 0; i < 1; i++) {
+    for (int i = 0; i < 4; i++) {
         
-        printf("%d", numbers[i]);
+        printf("%d, ", numbers[i]);
     }
     printf("%d]\n", numbers[4]); 
  
