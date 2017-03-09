@@ -7,14 +7,16 @@
 #include <stdio.h>
 #include <string.h>
 
-#define MAXLINE 256;
-#define MAXUSER 3;
+#define MAXLINE 256
+#define MAXUSER 3
 
 struct User {
     char * user;        // No reservamos memoria para esa cadena de caracteres
     char * pass;
 };
 
+
+int trimming (char *cad);
 
 
 int main () {
@@ -46,61 +48,68 @@ int main () {
      * 4. ya tenemos ptr input a inicio de cadena (usuario) y prtArroba a pass
     */
     char * punteroArroba = strstr(input, "@");
+    int encontrado = 0;
+    char *usuario = NULL;
+    char password = NULL;
+
     if (punteroArroba == NULL) {
         
-        printf("La cadena de entrada no está bien formada (no contiene el caracter '@')");    
+        printf("La cadena de entrada no está bien formada (no contiene el caracter '@')");
+
     } else {
         
         //machacamos '@' con '\0'
-        *punteroArroba = "\0";
+        *punteroArroba = '\0';
         
         //ya tenemos el usuario
-        char * usuario = input;
+        *usuario = input;
         
         //obtenemos la contraseña
-        char * password = punteroArroba + 1;
+        *password = punteroArroba + 1;
         
         //iteramos sobre database y comprobamos si el usuario y la contraseña coinciden
-        int encontrado = 0;
         int u = 0;
-        while ((encontrado == 0) && (u < MAXUSER)){     // GUARDA IMPORTANTE
+        while ((encontrado == 0) && (u < MAXUSER)) {     // GUARDA IMPORTANTE
         
             if ((strcmp(database[u].user, usuario) == 0) 
-                && (strcmp(database[u)].pass, password){
+                && (strcmp(database[u].pass, password))) {
             
                 encontrado = 1;
             }
             
             u ++;
         }
-    
-        if (encontrado == 1){
-                
-                printf("El usuario %s no tiene credenciales en el sistema\n", &usuario);
-         } else {
-         
-                printf("El usuario %s tiene credenciales en el sistema\n", &usuario);
-         }
-     
-     
-            
     }
 
+        if (encontrado == 1){
+                
+            printf("El usuario %s no tiene credenciales en el sistema\n", &usuario);
 
-
-
-
-
-
+         } else {
+         
+            printf("El usuario %s tiene credenciales en el sistema\n", &usuario);
+         }  
     
     return 0;
 }
 
 
+int trimming (char *cad) {
 
+    int longitud = 0;
 
+    //calculamos la longitud
+    while (cad(longitud) != '\0') {
 
+        longitud ++;
+    }
 
+    //trimming
+    if ((longitud > 0) && cad[longitud - 1] == '\n') {
 
+        cad[longitud - 1] = '\0';
+        longitud --;
+    }
 
-
+    return longitud;
+}
