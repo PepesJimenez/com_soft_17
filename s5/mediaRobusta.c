@@ -10,9 +10,13 @@
 #include <stdlib.h>
 
 
+/* ***** CABECERAS ****** */
+
 double procesarArgumento(char *arg);
 
 
+
+/* ***** MAIN ***** */
 
 int main (int argc, char * argv[]) {
     
@@ -38,27 +42,27 @@ int main (int argc, char * argv[]) {
 
 
 
+/* ***** SUBALGORITMOS ***** */
+
 double procesarArgumento(char *arg) {
     
     double conversion;
     char * error;
     
-    conversion = stdtod(arg, &error);
+    conversion = strtod(arg, &error);
     
     if (*error == 0) {    // '0' se puede poner como 'NULL'
     
         return conversion;
         
     } else {
-    
-        printf("No se puede convertir \"%s\" (hay una parte que no convertible \"%s\")\n", conversion, conversion);
-        exit(1);    // MATA EL PROCESO
+
+        char * str_error[];
+        strncpy(str_error, arg[], while(arg[] != NULL));
+        printf("No se puede convertir \"%s\" (hay una parte no convertible \"%s\")\n", conversion, conversion);
+        exit(1);    // MATA EL PROCESO (1 = error en el proceso)
     }
     
 }
-
-
-
-
 
 
