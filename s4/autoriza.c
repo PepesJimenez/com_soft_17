@@ -1,8 +1,5 @@
 /****** CODIGO A ENTREGAR EN S4 ******/
 
-// ***** NO ESTA COMPLETO ***** //
-
-// ***** FALTA FUNCION TRIMMING ***** //
 
 #include <stdio.h>
 #include <string.h>
